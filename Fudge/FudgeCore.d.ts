@@ -2398,6 +2398,7 @@ declare namespace FudgeCore {
         private data;
         private mutator;
         private vectors;
+        copy: Matrix4x4;
         constructor();
         /**
          * - get: a copy of the calculated translation vector

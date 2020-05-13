@@ -21,6 +21,7 @@ var Snake;
             let nextTranslation = nodes[0].mtxLocal.translation;
             let tempTranslation = nodes[0].mtxLocal.translation;
             nodes[0].mtxLocal.translation = f.Vector3.SUM(nextTranslation, this.dirCurrent);
+            
             for (let i = 1; i < nodes.length; i++) {
                 tempTranslation = nodes[i].mtxLocal.translation;
                 nodes[i].mtxLocal.translation = nextTranslation;
@@ -28,7 +29,7 @@ var Snake;
             }
         }
         createSegment(_segments) {
-            let mesh = new f.MeshCube();
+            let mesh = new f.MeshQuad();
             let mtrSolidWhite = new f.Material("SolidWhite", f.ShaderUniColor, new f.CoatColored(f.Color.CSS("WHITE")));
             for (let i = 0; i < _segments; i++) {
                 let segment = new f.Node("Segment");
